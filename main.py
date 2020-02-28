@@ -5,10 +5,10 @@ from wtforms.fields import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
 import unittest
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+from app import create_app
 
-app.config['SECRET_KEY'] = 'SUPER SECRETO'
+app = create_app()
+
 
 todos = ['Comprar cafe', 'Enviar solicitude de compra', 'Lavar ropa']
 
@@ -60,6 +60,6 @@ def hello():
 
     return render_template('hello.html', **context)
 
-@app.route('/test')
-def test():
-   return 'hola'
+# @app.route('/test')
+# def test():
+#    return 'hola'
