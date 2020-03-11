@@ -48,3 +48,11 @@ def hello():
     }
 
     return render_template('hello.html', **context)
+
+@app.route('/api')
+def api_response():
+    app.logger.debug('Debuging')
+    return{
+        "name": "Gerardo",
+        "last_name": "Gutierrez"
+    }
